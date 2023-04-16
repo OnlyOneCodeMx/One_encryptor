@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,6 +11,56 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="index.js"></script>
+    <div class="container">
+      <div class="body-container">
+        <div class="logo">
+          <img src="img/Logo.png" alt="alura-logo" />
+        </div>
+        <div class="form-container">
+          <div class="mesage">
+            <textarea
+              name="encryptorMesage"
+              cols="40"
+              rows="5"
+              placeholder="Ingrese el texto aqui..."
+            ></textarea>
+          </div>
+          <div class="rules-container">
+            <div class="rules">
+              <p>
+                <img
+                  src="img/Group.png"
+                  alt="exlacamation symbol"
+                />Solo letras minúsculas y sin acentos
+              </p>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="encryp-button">Encriptar</button>
+            <button id="decrypt-button">Desencriptar</button>
+            <button id="clear-button">limpiar</button>
+          </div>
+          <div class="result-container">
+            <div class="result"></div>
+            <img
+              src="img/Muñeco.png"
+              alt="person with a magnifying glass looking at a diamond
+                     "
+            />
+            <h2 class="result-h2">Ningún mensaje fue encontrado</h2>
+            <p class="result-p">
+              Ingresa el texto que desees encriptar o desencriptar.
+            </p>
+            <button class="copy-result">Copiar</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <footer>
+          Oracle Next education challenge by Miguel Angel Diaz
+        </footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
