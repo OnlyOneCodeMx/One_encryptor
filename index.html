@@ -7,62 +7,66 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Encryptor</title>
+    <title>Encriptar Mensajes</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="container">
-      <div class="body-container">
-        <div class="logo">
-          <img src="img/Logo.png" alt="alura-logo" />
-        </div>
-        <div class="form-container">
-          <div class="mesage">
-            <textarea
-              name="encryptorMesage"
-              cols="40"
-              rows="5"
-              placeholder="Ingrese el texto aqui..."
-            ></textarea>
-          </div>
-          <div class="rules-container">
-            <div class="rules">
-              <img
-                class="rules-image"
-                src="img/Group.png"
-                alt="exlacamation symbol"
-              />
-              <p>Solo letras minúsculas y sin acentos</p>
-            </div>
-          </div>
-          <div class="buttons">
-            <button id="encrypt-button">Encriptar</button>
-            <button id="decrypt-button">Desencriptar</button>
-            <button id="clear-button">limpiar</button>
-          </div>
-          <div class="result-container">
-            <div class="result"></div>
-            <img
-              class="result-img"
-              src="img/Muñeco.png"
-              alt="person with a magnifying glass looking at a diamond
-                     "
-            />
-            <h2 class="result-h2">Ningún mensaje fue encontrado</h2>
-            <p class="result-p">
-              Ingresa el texto que desees encriptar o desencriptar.
-            </p>
-            <button class="copy-result">Copiar</button>
-          </div>
+    <header class="header">
+      <img src="img/Logo.svg" alt="Alura logo" />
+    </header>
+
+    <main class="main">
+      <div class="main__text">
+        <textarea
+          class="main__text-area"
+          name="encryptorMesage"
+          cols="30"
+          rows="10"
+          placeholder="Ingrese el texto aqui..."
+          autofocus
+          required
+        ></textarea>
+        <p>
+          <small class="main__text-advice"
+            >Solo letras minúsculas y sin acentos</small
+          >
+        </p>
+
+        <div class="buttons">
+          <button class="buttons__encrypt">Encriptar</button>
+          <button class="buttons__decrypt">Desencriptar</button>
+          <button lass="buttons__clear">limpiar</button>
         </div>
       </div>
-      <div class="footer">
-        <footer>
-          Oracle Next education challenge by Miguel Angel Diaz
-        </footer>
+    </main>
+
+    <div class="message">
+      <div class="noresult">
+        <img
+          class="noresult__img"
+          src="./img/Muñeco.svg"
+          alt="a person looking at a diamond with a magnifying glass"
+        />
+        <h2 class="noresult__title">Ningún mensaje fue encontrado</h2>
+        <p class="noresult__text">
+          Ingresa el texto que desees encriptar o desencriptar.
+        </p>
+      </div>
+
+      <div class="result hidden">
+        <p class="result__text"></p>
+        <button class="buttons__copy">Copiar</button>
       </div>
     </div>
+
+    <div class="footer">
+      <footer>
+        Oracle Next education challenge by Miguel Angel Avendaño Diaz
+      </footer>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
