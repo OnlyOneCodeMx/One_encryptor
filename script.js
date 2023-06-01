@@ -1,3 +1,4 @@
+//Variables globales
 const encryptor = {
   e: 'enter',
   i: 'imes',
@@ -10,13 +11,27 @@ const textArea = document.querySelector('.main__textArea');
 const encryptButton = document.querySelector('.buttons__encrypt');
 const decryptButton = document.querySelector('.buttons__decrypt');
 const clearButton = document.querySelector('.buttons__clear');
+const copyButton = document.querySelector('.buttons__copy');
 const resultText = document.querySelector('.result__text');
 const messageSection = document.querySelector('.message');
+
+// Función para validar el texto ingresado
+function validateText(text) {
+  // Expresión regular para validar el texto (solo letras minúsculas sin caracteres especiales)
+  const regex = /^[a-z\s]+$/;
+  return regex.test(text);
+}
 
 // Función para encriptar el texto
 function encryptText(encrypted) {
   // Si el texto a encriptar no está vacío
   if (encrypted !== '') {
+    // Validamos el texto ingresado
+    if (!validateText(encrypted)) {
+      alert('El texto ingresado contiene caracteres no permitidos.');
+      return '';
+    }
+
     let modifiedText = encrypted;
 
     // Iteramos a través del objeto encryptor para reemplazar las letras
@@ -30,24 +45,31 @@ function encryptText(encrypted) {
     return modifiedText;
   } else {
     // Si el texto está vacío, devolvemos un mensaje de error
-    return alert('No se ha ingresado texto.');
+    return 'No se ha ingresado texto.';
   }
 }
 
-//Función para desencryptar el texto
+// Función para desencriptar el texto
 function decryptText(encrypted) {
-  //Si el texto a desencriptar no está vacío
+  // Si el texto a desencriptar no está vacío
   if (encrypted !== '') {
+    // Validamos el texto ingresado
+    if (!validateText(encrypted)) {
+      alert('El texto ingresado contiene caracteres no permitidos.');
+      return '';
+    }
+
     let modifiedText = encrypted;
 
-    //Iteramos a través del objeto encryptor en sentido inverso para remplazar las letras
+    // Iteramos a través del objeto encryptor en sentido inverso para reemplazar las letras
     const reversedEncryptor = {};
     for (const key in encryptor) {
       reversedEncryptor[encryptor[key]] = key;
     }
 
-    //Itermos a traves del objeto reversedEncryptor para remplazar las letras
+    // Iteramos a través del objeto reversedEncryptor para reemplazar las letras
     for (const key in reversedEncryptor) {
+      // Reemplazamos todas las ocurrencias de la letra
       const regex = new RegExp(key, 'g');
       modifiedText = modifiedText.replaceAll(
         regex,
@@ -55,14 +77,13 @@ function decryptText(encrypted) {
       );
     }
 
-    //Devolmemos el texto modificado
+    // Devolvemos el texto modificado
     return modifiedText;
   } else {
-    //Si el texto esta vacío, devolmemos un mensaje de error
+    // Si el texto está vacío, devolvemos un mensaje de error
     return 'No se ha ingresado texto.';
   }
 }
-
 // Función para manejar el evento de clic en el botón de encriptar
 function handleEncrypt() {
   const encrypted = textArea.value;
@@ -87,7 +108,34 @@ function handleClear() {
   textArea.focus();
 }
 
+// Función para manejar el evento de clic en el botón de copiar
+function handleCopy() {
+  const result = resultText.textContent;
+  if (result !== '') {
+    // Crear un elemento de textarea temporal
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = result;
+
+    // Agregar el elemento al DOM
+    document.body.appendChild(tempTextArea);
+
+    // Seleccionar y copiar el contenido del textarea
+    tempTextArea.select();
+    document.execCommand('copy');
+
+    // Eliminar el textarea temporal
+    document.body.removeChild(tempTextArea);
+
+    // Mostrar una alerta de copiado exitoso
+    alert('Texto copiado al portapapeles.');
+
+    // Limpiar todo usando la función handleClear existente
+    handleClear();
+  }
+}
+
 // Agregamos los manejadores de evento a los botones correspondientes
 encryptButton.addEventListener('click', handleEncrypt);
 decryptButton.addEventListener('click', handleDecrypt);
 clearButton.addEventListener('click', handleClear);
+copyButton.addEventListener('click', handleCopy);
