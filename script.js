@@ -1,4 +1,4 @@
-//Variables globales
+// Variables globales
 const encryptor = {
   e: 'enter',
   i: 'imes',
@@ -13,7 +13,8 @@ const decryptButton = document.querySelector('.buttons__decrypt');
 const clearButton = document.querySelector('.buttons__clear');
 const copyButton = document.querySelector('.buttons__copy');
 const resultText = document.querySelector('.result__text');
-const messageSection = document.querySelector('.message');
+const noResultSection = document.querySelector('.noresult');
+const resultSection = document.querySelector('.result');
 
 // Función para validar el texto ingresado
 function validateText(text) {
@@ -84,27 +85,31 @@ function decryptText(encrypted) {
     return 'No se ha ingresado texto.';
   }
 }
+
 // Función para manejar el evento de clic en el botón de encriptar
 function handleEncrypt() {
   const encrypted = textArea.value;
   const modifiedText = encryptText(encrypted);
   resultText.textContent = modifiedText;
-  messageSection.classList.remove('hidden');
+  noResultSection.classList.add('hidden');
+  resultSection.classList.remove('hidden');
 }
 
-//Función para manejar el evento de clic en el boton de desencriptar
+// Función para manejar el evento de clic en el botón de desencriptar
 function handleDecrypt() {
   const encrypted = textArea.value;
   const modifiedText = decryptText(encrypted);
   resultText.textContent = modifiedText;
-  messageSection.classList.remove('hidden');
+  noResultSection.classList.add('hidden');
+  resultSection.classList.remove('hidden');
 }
 
 // Función para manejar el evento de clic en el botón de limpiar
 function handleClear() {
   textArea.value = '';
   resultText.textContent = '';
-  messageSection.classList.add('hidden');
+  noResultSection.classList.remove('hidden');
+  resultSection.classList.add('hidden');
   textArea.focus();
 }
 
@@ -134,7 +139,7 @@ function handleCopy() {
   }
 }
 
-// Agregamos los manejadores de evento a los botones correspondientes
+// Agregar los manejadores de eventos a los botones correspondientes
 encryptButton.addEventListener('click', handleEncrypt);
 decryptButton.addEventListener('click', handleDecrypt);
 clearButton.addEventListener('click', handleClear);
