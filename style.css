@@ -202,7 +202,7 @@ body {
 
 /* RESPONSIVE MOBILE */
 
-@media (max-width: 375px) {
+@media screen and (max-width: 767px) {
     .header {
         display: flex;
         justify-content: flex-start;
