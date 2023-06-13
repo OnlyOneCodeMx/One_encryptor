@@ -197,3 +197,82 @@ body {
     color: #03A9F4;
 
 }
+
+
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 375px) {
+    .header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+        position: relative;
+        height: 96px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 4.27%;
+        right: 87.2%;
+        top: 25%;
+        bottom: 25%;
+        width: 32px;
+        height: 48px;
+    }
+
+    .header__title {
+        position: absolute;
+        left: 17.27%;
+        font-size: 1.5rem;
+
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0 16px 0 16px;
+    }
+
+    .main__text {
+        width: 100%;
+        padding: 0;
+    }
+
+    .main__textArea {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button {
+        margin: 5px;
+    }
+
+    .message {
+        width: 100%;
+        height: auto;
+    }
+
+    .noresult__img {
+        display: none;
+    }
+
+    .result {
+        margin: 0;
+    }
+
+    .footer {
+        padding: 5px;
+        gap: 0;
+    }
+
+    .footer__info {
+        font-size: 0.75rem;
+    }
+}
