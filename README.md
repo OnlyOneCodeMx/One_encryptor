@@ -1,7 +1,7 @@
 # Encriptador de texto Alura Challenges ONE G5 - 2023
 
-| ![Logo de Oracle Next Education](./assets/readme/one.webp) | ![Logo de Alura](./assets/readme/alura.webp) |
-| :--------------------------------------------------------: | :------------------------------------------: |
+| ![Logo de Oracle Next Education](./img/one.webp) | ![Logo de Alura](./img/alura.webp) |
+| :----------------------------------------------: | :--------------------------------: |
 
 ## 📝 Descripción del desafío
 
