@@ -1,4 +1,3 @@
-// Variables globales
 const encryptor = {
   e: 'enter',
   i: 'imes',
