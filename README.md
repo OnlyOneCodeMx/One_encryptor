@@ -29,7 +29,7 @@ El proyecto es una aplicación que debe encriptar y desencriptar texto 🔒. La 
 
 📋 Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, o sea que tenga la misma funcionalidad del ctrl+C o de la opción "copiar" del menú de las aplicaciones.
 
-![Captura de pantalla del proyecto](./assets/readme/screenshot.webp)
+![Captura de pantalla del proyecto](./img/projectscreenshot.webp)
 
 ## 🚀 Descripción del proyecto
 
