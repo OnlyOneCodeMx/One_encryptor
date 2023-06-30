@@ -31,7 +31,7 @@ Un botón que copie el texto encriptado/desencriptado para la sección de transf
 
 Un botón que limpie todo el contenido, tanto el resultado, como el texto ingresado por el usuario.
 
-![Captura de pantalla del proyecto](./img/projectscreenshot.webperw)
+![Captura de pantalla del proyecto](./img/projectscreenshot.webp)
 
 ### Tecnologías
 
